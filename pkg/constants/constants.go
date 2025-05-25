@@ -22,6 +22,7 @@ const (
 
 // ContainerNameVault is the default vault container name.
 const ContainerNameVault = "vault"
+const ContainerNameOpenBao = "openbao"
 
 const DefaultExternalInterval = 20 * time.Minute
 
@@ -32,6 +33,7 @@ const (
 	EnvDevelopmentModeK8sTokenFile = "UNSEALER_DEVELOPMENT_MODE_K8S_TOKEN_FILE"
 	EnvDeploymentName              = "UNSEALER_DEPLOYMENT_NAME"
 	EnvVaultAddr                   = "VAULT_ADDR"
+	EnvOpenBaoAddr                 = "BAO_ADDR"
 	EnvNamespace                   = "UNSEALER_NAMESPACE"
 	EnvPodName                     = "UNSEALER_POD_NAME"
 	EnvPodIP                       = "UNSEALER_POD_IP"
