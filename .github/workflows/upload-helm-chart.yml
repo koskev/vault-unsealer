@@ -41,10 +41,8 @@ jobs:
           VERSION=$(echo "${{github.event.release.tag_name }}" | sed 's/v//g')
           sed -i "s/^version:.*$/version: ${VERSION}/"        ./chart/Chart.yaml
           sed -i "s/^appVersion:.*$/appVersion: v${VERSION}/" ./chart/Chart.yaml
-          make helm-docs
-          ./bin/helm-docs
           helm package ./chart --version $VERSION --app-version v$VERSION -d dist
-          helm push dist/vault-unsealer-${VERSION}.tgz oci://ghcr.io/bakito/helm-charts
+          helm push dist/vault-unsealer-${VERSION}.tgz oci://ghcr.io/koskev/helm-charts
 
       - name: Install chart-releaser
         uses: engineerd/configurator@v0.0.10

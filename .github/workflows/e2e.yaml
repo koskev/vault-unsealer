@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         # https://hub.docker.com/r/kindest/node/tags
-        k8s_version: [ "v1.31.9", "v1.32.5", "v1.33.1" ]
+        k8s_version: ["v1.31.9", "v1.32.5", "v1.33.1"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,3 +73,4 @@ jobs:
         run: |
           echo "Step 'Check vault' failed: Check 'Print logs Unsealer' for errors"
           exit 1
+

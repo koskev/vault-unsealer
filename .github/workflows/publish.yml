@@ -28,7 +28,7 @@ jobs:
         if: ${{ github.event.release.tag_name != '' }}
         with:
           push: true
-          tags: ghcr.io/bakito/vault-unsealer:latest,ghcr.io/bakito/vault-unsealer:${{ github.event.release.tag_name }}
+          tags: ghcr.io/koskev/vault-unsealer:latest,ghcr.io/koskev/vault-unsealer:${{ github.event.release.tag_name }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           provenance: false
           build-args: VERSION=${{ github.event.release.tag_name }}
@@ -39,10 +39,9 @@ jobs:
         if: ${{ github.event.release.tag_name == '' }}
         with:
           push: true
-          tags: ghcr.io/bakito/vault-unsealer:main
+          tags: ghcr.io/koskev/vault-unsealer:main
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           provenance: false
           build-args: VERSION=main
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-
